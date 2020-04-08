@@ -1,12 +1,40 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="isLogged.on">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <p @click="doLogin">{{isLogged.on}}</p>
     </div>
     <router-view/>
   </div>
+  <LogForm :is-logged="isLogged"  v-else>
+  </LogForm>
 </template>
+
+<script>
+import LogForm from '@/components/Login.vue';
+
+export default {
+  name: 'main',
+  data() {
+    return {
+      isLogged: {
+        on: false,
+      },
+    };
+  },
+  methods: {
+    doLogin() {
+      this.isLogged.on = !this.isLogged.on;
+    },
+    checkLogInfo() {
+    },
+  },
+  components: {
+    LogForm,
+  },
+};
+</script>
 
 <style>
 #app {
