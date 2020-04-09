@@ -5,13 +5,16 @@
       :key="error.length">
       {{error}}
     </p>
-    <label for="login">Введите логин:</label>
-    <input type="text" id="login" v-model="login">
-    <br>
-    <label for="password">Введите пароль:</label>
-    <input type="password" id="password" v-model="password">
+    <p>
+      <label for="login">Введите логин:</label>
+      <input type="text" id="login" v-model="login">
+    </p>
+
+    <p>
+      <label for="password">Введите пароль:</label>
+      <input type="password" id="password" v-model="password">
+    </p>
     <button @click="verify">Отправить</button>
-    <p>{{isLogged.on}}</p>
   </div>
 </template>
 
@@ -28,10 +31,9 @@ export default {
       users,
     };
   },
-  props: ['isLogged'],
   methods: {
     changeStatus() {
-      this.isLogged.on = !this.isLogged.on;
+      this.$emit('change-log-status');
     },
     checkLogin() {
       return this.login === this.users[0].login;

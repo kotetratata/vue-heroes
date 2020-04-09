@@ -1,13 +1,10 @@
 <template>
   <div class="hero-card">
-    <p class="hero-card__message">
-      some1 clicked on "hero"
-    </p>
     <p class="hero-card__name">
-      {{heroes[$route.params.id-1].name}}
+      {{getName()}}
     </p>
     <p class="hero-card__id">
-      with id {{$route.params.id}}
+      with id {{getId()}}
     </p>
     <router-link to="/">home</router-link>
   </div>
@@ -24,6 +21,14 @@ export default {
       heroes,
     };
   },
+  methods: {
+    getName() {
+      return heroes[this.$route.params.id - 1].name;
+    },
+    getId() {
+      return this.$route.params.id;
+    },
+  },
 };
 </script>
 
@@ -37,10 +42,6 @@ export default {
     border: 1px dashed red;
     &:hover{
       background-color: lightseagreen;
-    }
-    &__message{
-      color: #000eff;
-      font-size: 30px;
     }
     &__name{
       font-size: 40px;

@@ -1,13 +1,13 @@
 <template>
-  <div id="app" v-if="isLogged.on">
+  <div id="app" v-if="isLogged">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-      <p @click="doLogin">{{isLogged.on}}</p>
+      <p @click="doLogin">{{isLogged}}</p>
     </div>
     <router-view/>
   </div>
-  <LogForm :is-logged="isLogged"  v-else>
+  <LogForm @change-log-status="doLogin"  v-else>
   </LogForm>
 </template>
 
@@ -18,16 +18,12 @@ export default {
   name: 'main',
   data() {
     return {
-      isLogged: {
-        on: false,
-      },
+      isLogged: false,
     };
   },
   methods: {
     doLogin() {
-      this.isLogged.on = !this.isLogged.on;
-    },
-    checkLogInfo() {
+      this.isLogged = !this.isLogged;
     },
   },
   components: {

@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <router-link
+  <ul class="dashboard">
+    <li
       v-for="hero in heroes"
-      :to="'/hero/'+hero.id"
       :key="hero.id"
-      :hero="hero">
+      @click="routeToHeroCard(hero.id)">
       {{hero.name}}
-      <br>
-    </router-link>
-  </div>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -22,16 +20,22 @@ export default {
       heroes,
     };
   },
+  methods: {
+    concatUrl(value) {
+      return `/hero/${value}`;
+    },
+    routeToHeroCard(id) {
+      this.$router.push(this.concatUrl(id));
+    },
+  },
 };
 </script>
 
-<style scoped>
-  p {
-    padding: 5px;
-    text-align: left;
-    color: red;
-  }
-  p:hover{
-    background-color: lightgray;
+<style scoped lang="scss">
+  .dashboard{
+    padding: 0;
+    &>li{
+      display: block;
+    }
   }
 </style>
