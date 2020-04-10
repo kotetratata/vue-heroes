@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     changeStatus() {
-      this.$emit('change-log-status');
+      this.$store.commit('logUser');
     },
     checkLogin() {
       return this.login === this.users[0].login;
