@@ -4,6 +4,7 @@ import mutations from './mutations';
 import actions from './actions';
 
 const Hero = {
+  namespaced: true,
   state,
   getters,
   mutations,
