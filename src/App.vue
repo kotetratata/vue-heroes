@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-      <p @click="logOut">{{$store.getters.checkLogStatus}}</p>
+      <p @click="logOut">Выход</p>
     </div>
     <router-view/>
   </div>
@@ -13,16 +13,25 @@
 
 <script>
 import LogForm from '@/components/Login.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'main',
   methods: {
     checkLogStatus() {
-      return this.$store.getters.checkLogStatus;
+      return this.$store.getters.checkLog;
     },
     logOut() {
-      this.$store.commit('logOutUser');
+      this.$store.dispatch('logOutUser');
     },
+    ...mapActions([
+      // logOutUser,
+    ]),
+  },
+  computed: {
+    ...mapGetters([
+      // checkLog,выше в методах вызываются нормально, а через мап ловлю андефайнды,пока оставил так
+    ]),
   },
   components: {
     LogForm,
