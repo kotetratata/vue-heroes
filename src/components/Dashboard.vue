@@ -1,17 +1,20 @@
 <template>
-  <ul class="dashboard">
-    <li
-      v-for="hero in heroes"
-      :key="hero.id"
-      @click="routeToHeroCard(hero.id)">
-      {{hero.name}}
-    </li>
-  </ul>
+  <div>
+    <ul class="dashboard">
+      <li
+        v-for="hero in heroes"
+        :key="hero.id"
+        @click="routeToHeroCard(hero.id)">
+        {{hero.name}}
+      </li>
+    </ul>
+    <Group></Group>
+  </div>
 </template>
 
 <script>
-
 import heroes from '@/assets/heroes-list';
+import Group from './Group.vue';
 
 export default {
   name: 'Dashboard',
@@ -27,6 +30,9 @@ export default {
     routeToHeroCard(id) {
       this.$router.push(this.concatUrl(id));
     },
+  },
+  components: {
+    Group,
   },
 };
 </script>

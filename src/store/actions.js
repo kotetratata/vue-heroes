@@ -1,5 +1,5 @@
 const actions = {
-  loginUser(context) {
+  logInUser(context) {
     context.commit('setLogStatus', true);
   },
   logOutUser(context) {

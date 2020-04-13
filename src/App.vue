@@ -1,9 +1,9 @@
 <template>
-  <div id="app" v-if="checkLogStatus()">
+  <div id="app" v-if="true">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-      <p @click="logOut">Выход</p>
+      <p @click="logOutUser">Выход</p>
     </div>
     <router-view/>
   </div>
@@ -12,25 +12,26 @@
 </template>
 
 <script>
+import heroes from '@/assets/heroes-list';
 import LogForm from '@/components/Login.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'main',
+  created() {
+    heroes.forEach((elem) => this.addToUnselected(elem));
+  },
   methods: {
-    checkLogStatus() {
-      return this.$store.getters.checkLog;
-    },
-    logOut() {
-      this.$store.dispatch('logOutUser');
-    },
     ...mapActions([
-      // logOutUser,
+      'logOutUser',
+    ]),
+    ...mapActions('Dashboard', [
+      'addToUnselected',
     ]),
   },
   computed: {
     ...mapGetters([
-      // checkLog,выше в методах вызываются нормально, а через мап ловлю андефайнды,пока оставил так
+      'checkLog',
     ]),
   },
   components: {

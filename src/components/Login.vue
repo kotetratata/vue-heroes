@@ -20,6 +20,7 @@
 
 <script>
 import users from '@/assets/users';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'Log-form',
@@ -32,9 +33,9 @@ export default {
     };
   },
   methods: {
-    changeStatus() {
-      this.$store.commit('logUser');
-    },
+    ...mapActions([
+      'logInUser',
+    ]),
     checkLogin() {
       return this.login === this.users[0].login;
     },
@@ -51,7 +52,7 @@ export default {
         this.errors.push('wrong password');
         return;
       }
-      this.changeStatus();
+      this.logInUser();
     },
   },
 };
