@@ -1,0 +1,22 @@
+.group__list{
+  width: 400px;
+  margin: auto;
+  border: 1px solid brown;
+
+  p{
+    font-weight: bold;
+  }
+
+  ul{
+    display: block;
+    margin: auto auto 2vh auto;
+    padding: 0;
+
+    li{
+      display: block;
+      width: 160px;
+      margin: auto;
+      border: 2px solid red;
+    }
+  }
+}

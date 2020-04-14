@@ -1,16 +1,17 @@
 <template>
-  <div>
+  <div class="group">
      <GroupEditor v-if="editor"></GroupEditor>
     <div v-if="!(currentGroup.length)">
       <button @click="activateEditor">Создать группу</button>
     </div>
-    <div v-else>
+    <div class="group__list" v-else>
+      <p>Here ur group</p>
       <ul>
         <li
           v-for="(hero, index) in currentGroup"
           :key="index">
           {{hero.name}}
-          ></li>
+          </li>
       </ul>
       <button @click="activateEditor">Редактировать группу</button>
       <br>
@@ -19,29 +20,8 @@
   </div>
 </template>
 
-<script>
-import { mapActions, mapGetters } from 'vuex';
-import GroupEditor from './GroupEditor.vue';
-
-export default {
-  name: 'Group',
-  computed: {
-    ...mapGetters('Dashboard', {
-      currentGroup: 'getGroup',
-      editor: 'getEditor',
-    }),
-  },
-  methods: {
-    ...mapActions('Dashboard', [
-      'activateEditor',
-      'clearGroup',
-    ]),
-  },
-  components: {
-    GroupEditor,
-  },
-};
+<script src="./Group.js">
 </script>
 
-<style scoped lang="scss">
+<style scoped src="./Group.scss" lang="scss">
 </style>

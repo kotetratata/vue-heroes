@@ -1,0 +1,45 @@
+.editor{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(60,63,65,.5);
+  position: absolute;
+  top:0;
+  left:0;
+
+  &__menu{
+    width: 50vw;
+    height: 50vh;
+    margin: 25vh auto;
+    background-color: white;
+    border: 10px dashed black;
+  }
+
+  &__inner-cont{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__selected-heroes{
+    li{
+      display: block;
+      padding: 5px;
+      border:1px solid black;
+
+      &:hover{
+        background-color: grey;
+      }
+    }
+  }
+  &__unselected-heroes{
+    li{
+      display: block;
+      padding: 5px;
+      border: 1px solid red;
+
+      &:hover{
+        background-color: orange;
+      }
+    }
+  }
+}
