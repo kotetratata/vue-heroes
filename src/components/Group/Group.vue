@@ -4,11 +4,12 @@
     <div v-if="!(currentGroup.length)">
       <button @click="activateEditor">Создать группу</button>
     </div>
-    <div class="group__list" v-else>
-      <p>Here ur group</p>
-      <ul>
+    <div class="group__container" v-else>
+      <p class="group__title">Here ur group</p>
+      <ul class="group__list">
         <li
           v-for="(hero, index) in currentGroup"
+          class="group__item"
           :key="index">
           {{hero.name}}
           </li>

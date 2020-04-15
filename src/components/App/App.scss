@@ -4,7 +4,7 @@ body, html{
   margin: 0;
   box-sizing: border-box;
 }
-#app {
+.app {
   position: relative;
   height: 100vh;
   padding: 0;
@@ -12,18 +12,18 @@ body, html{
   text-align: center;
 }
 
-#nav {
+.nav {
   padding: 30px;
   margin: auto;
   width: 600px;
   border:3px dotted red;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  &__item {
+    font-weight: bold;
+    color: #2c3e50;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  &__item.router-link-exact-active {
+    color: #42b983;
+  }
 }

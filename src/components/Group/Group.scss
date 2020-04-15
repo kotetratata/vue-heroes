@@ -1,22 +1,24 @@
-.group__list{
-  width: 400px;
-  margin: auto;
-  border: 1px solid brown;
+.group{
+  &__container{
+    width: 400px;
+    margin: auto;
+    border: 1px solid brown;
+  }
 
-  p{
+  &__title{
     font-weight: bold;
   }
 
-  ul{
+  &__list{
     display: block;
     margin: auto auto 2vh auto;
     padding: 0;
+  }
 
-    li{
-      display: block;
-      width: 160px;
-      margin: auto;
-      border: 2px solid red;
-    }
+  &__item{
+    display: block;
+    width: 160px;
+    margin: auto;
+    border: 2px solid red;
   }
 }

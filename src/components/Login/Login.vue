@@ -1,7 +1,7 @@
 <template>
   <div>
     <p
-      v-for="error in errors"
+      v-for="error in verificationErrors"
       :key="error.length">
       {{error}}
     </p>

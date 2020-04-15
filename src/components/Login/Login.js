@@ -5,7 +5,7 @@ export default {
   name: 'Log-form',
   data() {
     return {
-      errors: [],
+      verificationErrors: [],
       selected: 'DC',
       login: '',
       password: '',
@@ -21,33 +21,30 @@ export default {
       'setUniverse',
     ]),
     getLoginIndex() {
-      return users.findIndex((elem) => elem.login === this.login);
+      return this.users.findIndex((elem) => elem.login === this.login);
     },
     checkPassword(index) {
       return this.password === this.users[index].password;
     },
-    checkCredentials(index) {
-      if (index === -1) {
-        this.errors.push('wrong login');
-        return false;
-      }
-
-      if (!this.checkPassword(index)) {
-        this.errors.push('wrong password');
-        return false;
-      }
-
-      return true;
+    pushVerificationError(error) {
+      this.verificationErrors.push(error);
     },
     verify() {
-      this.errors = [];
       const index = this.getLoginIndex();
+      const notFound = -1;
+      this.verificationErrors = [];
 
-      if (!this.checkCredentials(index)) {
+      if (index === notFound) {
+        this.pushVerificationError('wrong login');
         return;
       }
 
-      this.setUser(users[index]);
+      if (!this.checkPassword(index)) {
+        this.pushVerificationError('wrong password');
+        return;
+      }
+
+      this.setUser(this.users[index]);
       this.setUniverse(this.selected);
 
       this.logInUser();

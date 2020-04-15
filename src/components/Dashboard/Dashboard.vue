@@ -4,6 +4,7 @@
       <li
         v-for="hero in heroes"
         :key="hero.id"
+        class="dashboard__item"
         @click="routeToHeroCard(hero.id)">
         {{hero.name}}
       </li>

@@ -6,6 +6,7 @@
         <ul class="editor__selected-heroes">
           <li
             v-for="(hero, index) in getGroup"
+            class="item"
             :key="index"
             @click="unSelectHero(hero, index)">
             {{hero.name}}
@@ -14,6 +15,7 @@
         <ul class="editor__unselected-heroes">
           <li
             v-for="(hero, index) in getUnselected"
+            class="item"
             :key="index"
             @click="selectHero(hero, index)">
             {{hero.name}}

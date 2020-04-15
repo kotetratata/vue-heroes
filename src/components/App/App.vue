@@ -1,9 +1,9 @@
 <template>
-  <div id="app" v-if="checkLog">
+  <div class="app" v-if="checkLog">
     <Header></Header>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="nav">
+      <router-link class="nav__item" to="/">Home</router-link> |
+      <router-link class="nav__item" to="/about">About</router-link>
       <p @click="logOutUser">Выход</p>
     </div>
     <router-view/>
