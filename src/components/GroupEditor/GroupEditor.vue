@@ -3,24 +3,22 @@
     <div class="editor__menu">
       <h2>menu</h2>
       <div class="editor__inner-cont">
-        <ul class="editor__selected-heroes">
-          <li
-            v-for="(hero, index) in getGroup"
-            class="item"
-            :key="index"
-            @click="unSelectHero(hero, index)">
-            {{hero.name}}
-          </li>
-        </ul>
-        <ul class="editor__unselected-heroes">
-          <li
-            v-for="(hero, index) in getUnselected"
-            class="item"
-            :key="index"
-            @click="selectHero(hero, index)">
-            {{hero.name}}
-          </li>
-        </ul>
+        <ag-grid-vue
+          style="width: 220px; height: 300px; margin: auto;"
+          class="ag-theme-balham"
+          :columnDefs="selectedColumnDefs"
+          :rowData="selectedRowData"
+          :gridOptions="selectedGridOptions"
+        >
+        </ag-grid-vue>
+        <ag-grid-vue
+          style="width: 220px; height: 300px; margin: auto;"
+          class="ag-theme-balham"
+          :columnDefs="unSelectedColumnDefs"
+          :rowData="unSelectedRowData"
+          :gridOptions="unSelectedGridOptions"
+        >
+        </ag-grid-vue>
       </div>
       <button @click="deActivateEditor">Сохранить</button>
     </div>

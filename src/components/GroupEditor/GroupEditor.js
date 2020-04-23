@@ -1,4 +1,5 @@
 import { mapActions, mapGetters } from 'vuex';
+import { AgGridVue } from 'ag-grid-vue';
 import heroes from '@/assets/heroes-list';
 
 export default {
@@ -6,7 +7,27 @@ export default {
   data() {
     return {
       heroes,
+      selectedColumnDefs: null,
+      selectedRowData: null,
+      selectedGridOptions: {
+        onCellClicked: (event) => this.unSelectHero(event.data, event.rowIndex),
+      },
+      unSelectedColumnDefs: null,
+      unSelectedRowData: null,
+      unSelectedGridOptions: {
+        onCellClicked: (event) => this.selectHero(event.data, event.rowIndex),
+      },
     };
+  },
+  created() {
+    this.selectedColumnDefs = [
+      { headerName: 'Selected heroes', field: 'name', sortable: true },
+    ];
+    this.unSelectedColumnDefs = [
+      { headerName: 'Unselected heroes', field: 'name', sortable: true },
+    ];
+    this.selectedRowData = this.getGroup;
+    this.unSelectedRowData = this.getUnselected;
   },
   computed: {
     ...mapGetters('Dashboard', [
@@ -30,5 +51,8 @@ export default {
       this.addToUnselected(hero);
       this.removeHeroFromGroup(index);
     },
+  },
+  components: {
+    AgGridVue,
   },
 };

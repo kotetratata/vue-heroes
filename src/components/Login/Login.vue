@@ -13,7 +13,7 @@
       <label for="password">Введите пароль:</label>
       <input type="password" id="password" v-model="password">
     </p>
-    <select v-model="selected">
+    <select v-model="selectedUniverse">
       <option value="DC">DC</option>
       <option value="marvel">marvel</option>
     </select>

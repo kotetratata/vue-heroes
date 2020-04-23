@@ -1,14 +1,12 @@
 <template>
   <div>
-    <ul class="dashboard">
-      <li
-        v-for="hero in heroes"
-        :key="hero.id"
-        class="dashboard__item"
-        @click="routeToHeroCard(hero.id)">
-        {{hero.name}}
-      </li>
-    </ul>
+    <ag-grid-vue style="width: 400px; height:335px; margin: auto;"
+                 class="ag-theme-balham"
+                 :columnDefs="columnDefs"
+                 :rowData="rowData"
+                 :gridOptions="gridOptions"
+    >
+    </ag-grid-vue>
     <Group></Group>
   </div>
 </template>

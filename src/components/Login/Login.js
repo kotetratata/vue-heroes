@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       verificationErrors: [],
-      selected: 'DC',
+      selectedUniverse: 'DC',
       login: '',
       password: '',
       users,
@@ -45,7 +45,7 @@ export default {
       }
 
       this.setUser(this.users[index]);
-      this.setUniverse(this.selected);
+      this.setUniverse(this.selectedUniverse);
 
       this.logInUser();
     },
