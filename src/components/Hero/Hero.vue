@@ -3,6 +3,17 @@
     <p class="hero-card__name">
       {{getName()}}
     </p>
+    <div style="display: flex; margin: auto; width: 340px;">
+      <p style="width: 100px;"
+         v-for="(item,index) in heroTabs"
+         :key="index"
+         @click="changeTab(index)"
+      >
+        {{item.title}}
+      </p>
+    </div>
+    <h2>{{currentTab}}</h2>
+    <component :is="currentTab"></component>
     <p class="hero-card__id">
       with id {{getId()}}
     </p>
