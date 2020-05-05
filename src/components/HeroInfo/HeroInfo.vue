@@ -1,5 +1,5 @@
 <template>
-  <p>this is info comp!</p>
+  <p>Currently watching hero with id = {{id}}</p>
 </template>
 
 <script src="./HeroInfo.js">
