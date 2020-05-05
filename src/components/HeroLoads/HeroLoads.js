@@ -8,8 +8,8 @@ export default {
   methods: {
     getFile(event) {
       this.files.push(event.target.files[0].name);
-      // document.querySelector('.hero-loads__input')
-      //   .files = [];
+      document.querySelector('.hero-loads__input')
+        .value = '';
     },
   },
 };
