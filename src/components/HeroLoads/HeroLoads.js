@@ -6,10 +6,11 @@ export default {
     };
   },
   methods: {
-    getFile(event) {
-      this.files.push(event.target.files[0].name);
-      document.querySelector('.hero-loads__input')
-        .value = '';
+    setFile() {
+      const input = document.querySelector('.hero-loads__input');
+
+      this.files.push(input.files[0].name);
+      input.value = '';
     },
   },
 };
