@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="file" @change="setFile" class="hero-loads__input">
+    <input type="file" @change="setFile" class="hero-loads__input" accept=".jpg, .jpeg, .png">
     <ol>
       <li v-for="(file, index) in files" :key="index">{{file}}</li>
     </ol>
