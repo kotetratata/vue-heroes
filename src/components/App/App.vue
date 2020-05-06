@@ -1,5 +1,5 @@
 <template>
-  <div class="app" v-if="checkLog">
+  <div class="app" v-if="getLogStatus">
     <Header></Header>
     <div class="nav">
       <router-link class="nav__item" to="/">Home</router-link> |

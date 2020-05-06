@@ -1,6 +1,6 @@
 <template>
   <div class="group">
-     <GroupEditor v-if="editor"></GroupEditor>
+    <GroupEditor v-if="editor"></GroupEditor>
     <div v-if="!(currentGroup.length)">
       <button @click="activateEditor">Создать группу</button>
     </div>

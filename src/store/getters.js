@@ -1,5 +1,5 @@
 const getters = {
-  checkLog: (state) => state.isLogged,
+  getLogStatus: (state) => state.isLogged,
 };
 
 export default getters;
