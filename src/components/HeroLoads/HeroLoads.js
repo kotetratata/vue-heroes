@@ -13,12 +13,11 @@ export default {
   computed: {
     ...mapGetters('Hero', [
       'getCurrentLoads',
-      'getAllLoads',
     ]),
   },
   methods: {
-    setFile() {
-      const input = document.querySelector('.hero-loads__input');
+    setFile(event) {
+      const { target: input } = event;
 
       this.addLoad({
         id: this.id,
