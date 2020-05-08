@@ -23,11 +23,8 @@ export default {
     this.rowData = [...heroes];
   },
   methods: {
-    concatUrl(value) {
-      return `/hero/${value}`;
-    },
     routeToHeroCard(id) {
-      this.$router.push(this.concatUrl(id));
+      this.$router.push(`/hero/${id}`);
     },
   },
   components: {

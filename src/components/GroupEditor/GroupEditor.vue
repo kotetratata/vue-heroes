@@ -3,24 +3,18 @@
     <div class="editor__menu">
       <h2>menu</h2>
       <div class="editor__inner-cont">
-        <ag-grid-vue
-          style="width: 220px; height: 300px; margin: auto;"
-          class="ag-theme-balham"
+        <ag-grid-vue class="ag-theme-balham"
           :columnDefs="selectedColumnDefs"
           :rowData="selectedRowData"
-          :gridOptions="selectedGridOptions"
-        >
+          :gridOptions="selectedGridOptions">
         </ag-grid-vue>
-        <ag-grid-vue
-          style="width: 220px; height: 300px; margin: auto;"
-          class="ag-theme-balham"
+        <ag-grid-vue class="ag-theme-balham"
           :columnDefs="unSelectedColumnDefs"
           :rowData="unSelectedRowData"
-          :gridOptions="unSelectedGridOptions"
-        >
+          :gridOptions="unSelectedGridOptions">
         </ag-grid-vue>
       </div>
-      <button @click="deActivateEditor">Сохранить</button>
+      <button @click="deActivateEditor">Save</button>
     </div>
   </div>
 </template>

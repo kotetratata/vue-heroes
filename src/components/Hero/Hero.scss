@@ -1,19 +1,40 @@
 p {
   padding: 5px;
 }
-.hero-card{
+.hero-card {
   width: 500px;
-  margin: auto;
-  border: 1px dashed red;
-  &:hover{
-    background-color: lightseagreen;
-  }
-  &__name{
+  margin: 5px auto;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+
+  &__name {
+    margin: 0;
     font-size: 40px;
     font-weight: bold;
-    color: deeppink;
+    color: #74A6EC;
   }
-  &__id{
+
+  &__id {
     font-size: 70px;
+  }
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 340px;
+
+  &__item {
+    width: 100px;
+    box-sizing: border-box;
+    border: 2px solid #A9A9A9;
+    border-radius: 4px;
+
+    &:hover {
+      border: 2px solid #000000;
+      background-color: #C1C1C1;
+    }
   }
 }

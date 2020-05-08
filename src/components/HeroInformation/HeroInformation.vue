@@ -2,8 +2,8 @@
   <p>Currently watching hero with id = {{id}}</p>
 </template>
 
-<script src="./HeroInfo.js">
+<script src="./HeroInformation.js">
 </script>
 
-<style scoped src="./HeroInfo.scss" lang="scss">
+<style scoped src="./HeroInformation.scss" lang="scss">
 </style>

@@ -1,18 +1,5 @@
-.dashboard{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  margin:2vh auto;
-  width: 300px;
-  border: 1px solid black;
-
-  &__item{
-    display: block;
-    width: 14vw;
-
-    &:hover{
-      background-color: grey;
-    }
-  }
+.ag-theme-balham{
+  width: 402px;
+  height:335px;
+  margin: auto;
 }

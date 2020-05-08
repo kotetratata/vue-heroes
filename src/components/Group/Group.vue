@@ -2,7 +2,7 @@
   <div class="group">
     <GroupEditor v-if="editor"></GroupEditor>
     <div v-if="!(currentGroup.length)">
-      <button @click="activateEditor">Создать группу</button>
+      <button @click="activateEditor">Create group</button>
     </div>
     <div class="group__container" v-else>
       <p class="group__title">Here ur group</p>
@@ -14,9 +14,9 @@
           {{hero.name}}
           </li>
       </ul>
-      <button @click="activateEditor">Редактировать группу</button>
+      <button @click="activateEditor">Edit group</button>
       <br>
-      <button @click="clearGroup">Удалить группу</button>
+      <button @click="clearGroup">Delete group</button>
     </div>
   </div>
 </template>

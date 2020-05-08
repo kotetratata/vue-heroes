@@ -1,14 +1,13 @@
 <template>
   <div class="hero-card">
-    <p class="hero-card__name">
+    <h3 class="hero-card__name">
       {{getName()}}
-    </p>
-    <div style="display: flex; margin: auto; width: 340px;">
-      <p style="width: 100px; border: 1px solid black;"
+    </h3>
+    <div class="tab-container">
+      <p class="tab-container__item"
          v-for="(item,index) in heroTabs"
          :key="index"
-         @click="changeTab(index)"
-      >
+         @click="changeTab(index)">
         {{item.title}}
       </p>
     </div>
@@ -16,7 +15,7 @@
     <keep-alive>
       <component :is="currentTab" :id="getId()"></component>
     </keep-alive>
-    <router-link to="/">home</router-link>
+    <button @click="goHome">home</button>
   </div>
 </template>
 
