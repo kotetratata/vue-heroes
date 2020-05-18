@@ -2,7 +2,6 @@
 @import "../../../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css";
 
 body, html{
-  height: 100vh;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -11,22 +10,5 @@ body, html{
   position: relative;
   height: 100vh;
   padding: 0;
-  margin: 0 0 20vh;
   text-align: center;
-}
-
-.nav {
-  padding: 30px;
-  margin: auto;
-  width: 600px;
-  border:3px dotted red;
-
-  &__item {
-    font-weight: bold;
-    color: #2c3e50;
-  }
-
-  &__item.router-link-exact-active {
-    color: #42b983;
-  }
 }

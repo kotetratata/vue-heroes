@@ -1,7 +1,7 @@
 import heroes from '@/assets/heroes-list';
 import heroTabs from '@/assets/hero-tab-list';
-import HeroAcc from '../HeroAcc/HeroAcc.vue';
-import HeroInfo from '../HeroInfo/HeroInfo.vue';
+import HeroAccount from '../HeroAccount/HeroAccount.vue';
+import HeroInformation from '../HeroInformation/HeroInformation.vue';
 import HeroLoads from '../HeroLoads/HeroLoads.vue';
 
 export default {
@@ -23,10 +23,13 @@ export default {
     changeTab(index) {
       this.currentTab = this.heroTabs[index].component;
     },
+    goHome() {
+      this.$router.push('/');
+    },
   },
   components: {
-    HeroAcc,
-    HeroInfo,
+    HeroAccount,
+    HeroInformation,
     HeroLoads,
   },
 };

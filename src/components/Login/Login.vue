@@ -1,23 +1,24 @@
 <template>
-  <div>
-    <p
-      v-for="error in verificationErrors"
-      :key="error.length">
-      {{error}}
+  <div class="login-form">
+    <p>
+      <label for="login">Enter login:</label>
+      <br>
+      <input type="text" id="login" v-model="login" :class="{ error: loginError}">
+      <br>
+      <span v-if="loginError">wrong login</span>
     </p>
     <p>
-      <label for="login">Введите логин:</label>
-      <input type="text" id="login" v-model="login">
-    </p>
-    <p>
-      <label for="password">Введите пароль:</label>
-      <input type="password" id="password" v-model="password">
+      <label for="password">Enter password:</label>
+      <br>
+      <input type="password" id="password" v-model="password" :class="{ error: passwordError}">
+      <br>
+      <span v-if="passwordError">wrong password</span>
     </p>
     <select v-model="selectedUniverse">
       <option value="DC">DC</option>
       <option value="marvel">marvel</option>
     </select>
-    <button @click="verify">Отправить</button>
+    <button @click="verifyUser">Send</button>
   </div>
 </template>
 

@@ -18,28 +18,12 @@
   &__inner-cont{
     display: flex;
     justify-content: space-around;
-  }
 
-  &__selected-heroes{
-    .item{
-      display: block;
-      padding: 5px;
-      border:1px solid black;
-
-      &:hover{
-        background-color: grey;
-      }
+    .column{
+      width: 220px;
+      height: 300px;
+      margin: auto;
     }
   }
-  &__unselected-heroes{
-    .item{
-      display: block;
-      padding: 5px;
-      border: 1px solid red;
 
-      &:hover{
-        background-color: orange;
-      }
-    }
-  }
 }

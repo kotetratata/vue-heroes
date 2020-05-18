@@ -1,11 +1,9 @@
 <template>
   <div>
-    <ag-grid-vue style="width: 400px; height:335px; margin: auto;"
-                 class="ag-theme-balham"
+    <ag-grid-vue class="ag-theme-balham dashboard"
                  :columnDefs="columnDefs"
                  :rowData="rowData"
-                 :gridOptions="gridOptions"
-    >
+                 :gridOptions="gridOptions">
     </ag-grid-vue>
     <Group></Group>
   </div>
