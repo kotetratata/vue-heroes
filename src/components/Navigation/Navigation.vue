@@ -3,7 +3,8 @@
     <div class="nav__border">
       <div class="nav__items">
         <router-link class="nav__item" to="/">Home</router-link> |
-        <router-link class="nav__item" to="/about">About</router-link>
+        <router-link class="nav__item" to="/about">About</router-link> |
+        <router-link class="nav__item" to="/PersonalPage">Personal Page</router-link>
       </div>
       <p @click="logOutUser">Exit</p>
     </div>

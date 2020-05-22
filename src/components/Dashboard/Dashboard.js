@@ -7,10 +7,14 @@ export default {
   data() {
     return {
       heroes,
-      columnDefs: null,
+      columnDefs: [],
       rowData: null,
       gridOptions: {
-        onRowDoubleClicked: (event) => this.routeToHeroCard(event.data.id),
+        columnDefs: [
+          { headerName: 'Id', field: 'id', sortable: true },
+          { headerName: 'Name', field: 'name', sortable: true },
+        ],
+        onRowDoubleClicked: ({ data: { id } }) => this.routeToHeroCard(id),
       },
     };
   },

@@ -20,6 +20,7 @@ export default {
     ...mapActions('User', [
       'setUser',
       'setUniverse',
+      'setSelectedUser',
     ]),
     getLoginUser() {
       return this.users.find(({ login }) => login === this.login);
@@ -43,6 +44,7 @@ export default {
       }
 
       this.setUser(user);
+      this.setSelectedUser(user);
       this.setUniverse(this.selectedUniverse);
 
       this.logInUser();

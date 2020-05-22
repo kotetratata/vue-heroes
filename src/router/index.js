@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import PersonalPage from '../views/PersonalPage.vue';
 import Hero from '../components/Hero/Hero.vue';
+import User from '../components/User/User.vue';
 
 Vue.use(VueRouter);
 
@@ -20,6 +22,16 @@ const routes = [
     path: '/hero/:id',
     name: 'Hero',
     component: Hero,
+  },
+  {
+    path: '/PersonalPage',
+    name: 'PersonalPage',
+    component: PersonalPage,
+  },
+  {
+    path: '/user/:id',
+    name: 'User',
+    component: User,
   },
 ];
 

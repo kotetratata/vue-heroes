@@ -8,7 +8,6 @@ export default {
   name: 'Hero',
   data() {
     return {
-      heroes,
       heroTabs,
       currentTab: heroTabs[0].component,
     };
