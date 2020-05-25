@@ -1,5 +1,5 @@
-import users from '@/assets/users';
 import { mapActions } from 'vuex';
+import users from '../../mock/users';
 
 export default {
   name: 'Log-form',

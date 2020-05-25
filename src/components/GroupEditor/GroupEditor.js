@@ -1,6 +1,6 @@
 import { mapActions, mapGetters } from 'vuex';
 import { AgGridVue } from 'ag-grid-vue';
-import heroes from '@/assets/heroes-list';
+import heroes from '../../mock/heroes-list';
 
 export default {
   name: 'GroupEditor',

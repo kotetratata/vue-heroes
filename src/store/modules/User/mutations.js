@@ -3,7 +3,7 @@ const mutations = {
     state.currentUser = user;
   },
   setSelectedUser(state, user) {
-    state.selectedUser = user; // temporary
+    state.selectedUser = user;
   },
   setUniverse(state, universe) {
     state.universe = universe;

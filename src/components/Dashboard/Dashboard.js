@@ -1,4 +1,4 @@
-import heroes from '@/assets/heroes-list';
+import heroes from '../../mock/heroes-list';
 import { AgGridVue } from 'ag-grid-vue';
 import Group from '../Group/Group.vue';
 
@@ -7,9 +7,8 @@ export default {
   data() {
     return {
       heroes,
-      columnDefs: [],
-      rowData: null,
       gridOptions: {
+        rowData: [...heroes],
         columnDefs: [
           { headerName: 'Id', field: 'id', sortable: true },
           { headerName: 'Name', field: 'name', sortable: true },
@@ -17,14 +16,6 @@ export default {
         onRowDoubleClicked: ({ data: { id } }) => this.routeToHeroCard(id),
       },
     };
-  },
-  beforeMount() {
-    this.columnDefs = [
-      { headerName: 'Id', field: 'id', sortable: true },
-      { headerName: 'Name', field: 'name', sortable: true },
-    ];
-
-    this.rowData = [...heroes];
   },
   methods: {
     routeToHeroCard(id) {

@@ -1,7 +1,6 @@
 <template>
   <div>
     <ag-grid-vue class="ag-theme-balham dashboard"
-                 :rowData="rowData"
                  :gridOptions="gridOptions">
     </ag-grid-vue>
     <Group></Group>

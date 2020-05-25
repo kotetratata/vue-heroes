@@ -1,4 +1,4 @@
-import heroes from '@/assets/heroes-list';
+import heroes from '@/mock/heroes-list';
 
 const mutations = {
   addHeroToGroup(state, hero) {

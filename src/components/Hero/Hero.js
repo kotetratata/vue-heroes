@@ -1,5 +1,5 @@
-import heroes from '@/assets/heroes-list';
-import heroTabs from '@/assets/hero-tab-list';
+import heroes from '../../mock/heroes-list';
+import heroTabs from '../../static/hero-tab-list';
 import HeroAccount from '../HeroAccount/HeroAccount.vue';
 import HeroInformation from '../HeroInformation/HeroInformation.vue';
 import HeroLoads from '../HeroLoads/HeroLoads.vue';

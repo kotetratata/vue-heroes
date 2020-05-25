@@ -1,8 +1,6 @@
 <template>
   <div>
     <ag-grid-vue class="ag-theme-balham dashboard"
-                 :columnDefs="columnDefs"
-                 :rowData="rowData"
                  :gridOptions="gridOptions">
     </ag-grid-vue>
   </div>

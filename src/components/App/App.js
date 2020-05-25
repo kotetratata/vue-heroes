@@ -1,8 +1,8 @@
-import heroes from '@/assets/heroes-list';
-import Header from '@/components/Header/Header.vue';
-import Navigation from '@/components/Navigation/Navigation.vue';
-import Footer from '@/components/Footer/Footer.vue';
-import LogForm from '@/components/Login/Login.vue';
+import heroes from '../../mock/heroes-list';
+import Header from '../Header/Header.vue';
+import Navigation from '../Navigation/Navigation.vue';
+import Footer from '../Footer/Footer.vue';
+import LogForm from '../Login/Login.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {

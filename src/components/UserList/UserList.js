@@ -1,30 +1,18 @@
-import users from '@/assets/users';
-import { AgGridVue } from 'ag-grid-vue';
 import { mapActions } from 'vuex';
+import { AgGridVue } from 'ag-grid-vue';
+import users from '../../mock/users';
+import columnDefs from '../../static/user-list-grid-col-data';
+
 
 export default {
   name: 'UserList',
   data() {
     return {
       users,
-      columnDefs: [
-        {
-          headerName: 'Id', field: 'id', resizable: true, sortable: true, width: 100,
-        },
-        {
-          headerName: 'Name', field: 'name', sortable: true, width: 100,
-        },
-        { headerName: 'Surname', field: 'surname', sortable: true },
-        { headerName: 'Login', field: 'login', sortable: true },
-        { headerName: 'Password', field: 'password', sortable: true },
-        {
-          headerName: 'Status', field: 'status', sortable: true, width: 100,
-        },
-        { headerName: 'Type', field: 'type', sortable: true },
-      ],
-      rowData: [...users],
       gridOptions: {
-        onRowDoubleClicked: ({ data: { id } }) => this.changeUserCard(id),
+        columnDefs: [...columnDefs],
+        rowData: [...users],
+        onRowClicked: ({ data: { id } }) => this.changeUserCard(id),
       },
     };
   },

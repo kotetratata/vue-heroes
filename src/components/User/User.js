@@ -2,8 +2,8 @@ import { mapGetters } from 'vuex';
 import UserAccount from '../UserAccount/UserAccount.vue';
 import UserInformation from '../UserInformation/UserInformation.vue';
 import UserLoads from '../UserLoads/UserLoads.vue';
-import userTabs from '../../assets/user-tab-list';
-import users from '../../assets/users';
+import userTabs from '../../static/user-tab-list';
+import users from '../../mock/users';
 
 export default {
   name: 'User',
